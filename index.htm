@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&display=swap">
+    <style>
+        body{
+            background-color: #151925;
+            color: white;
+            width: fit-content;
+        }
+        .header{
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            justify-content: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        .left{
+            width: 1fr;
+            margin-left: 40px;
+        }
+        .right{
+            width: 1fr;
+            margin-left: 600px;
+        }
+        p{
+            display: inline-block;
+            margin-right: 50px;
+            font-family: Arial, sans-serif;
+        }
+        .hello{
+            color: white;
+            font-size: 20px;
+            margin: 0;
+            display: block;
+            margin-bottom: -10px;
+        }
+        .intro{
+            margin-left: 200px;
+            margin-top: 40px;
+        }
+        .name{
+            font-size: 30px;
+            font-family: Verdana, sans-serif;
+            font-weight: 800;
+            display: block;
+            margin-bottom: -5px;
+        }
+        .container {
+            font-size: 2em;
+            font-family: Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            height: 150px; /* Full viewport height */
+        }
+
+        /* Base text that stays in place */
+        .static-text {
+            margin-right: 10px;
+            color: #fff; /* Color for the static text */
+        }
+
+        /* Scrolling words container */
+        .scrolling-words {
+            display: inline-block;
+            height: 1.25em; /* Ensures that only one line of text is visible at a time */
+            overflow: hidden;
+            font-weight: bold;
+        }
+
+        /* Position each word in a vertical line with gradient text */
+        .scrolling-words span {
+            display: block;
+            text-align: left;
+            animation: scrollWords 7s ease-in-out infinite;
+            background: #01EEFF;
+            -webkit-background-clip: text; /* Clips background to text */
+            -webkit-text-fill-color: transparent; /* Makes the text color transparent */
+        }
+
+        /* Keyframes for scrolling words */
+        @keyframes scrollWords {
+            0% { transform: translateY(0); }
+            33% { transform: translateY(-100%); }  /* Move to 'Sweat' */
+            66% { transform: translateY(-200%); }  /* Move to 'Achieve' */
+            100% { transform: translateY(0); }     /* Loop back to 'Work' */
+        }
+        .come {
+            margin-top: -40px;
+            font-size: 15px;
+        }
+        .welcome{
+            width: 600px;
+            margin-top: -40px;
+            font-family: Georgia, serif;
+            font-size: 17px;
+            
+        }
+        .code{
+            width: 500px;
+            height: 500px;
+            margin-right: 30px;
+        }
+        a{
+            text-decoration: none;
+        }
+        .home{
+            display: flex;
+            flex-direction: row;
+        }
+        .shiny-button {
+        padding: 15px 30px;
+        font-size: 18px;
+        font-weight: bold;
+        color: #fff;
+        background: linear-gradient(135deg, #01eeff, #0077ff);
+        border: none;
+        border-radius: 8px;
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+        transition: 0.3s ease;
+        box-shadow: 0px 4px 15px rgba(1, 238, 255, 0.5);
+        margin-left: 140px;
+        margin-top: 20px;
+        margin-bottom: 30px;
+        display: block;
+        text-decoration: none;
+        outline: none;
+    }
+    
+    /* Hover effect for a glow */
+    .shiny-button:hover {
+        box-shadow: 0px 4px 25px rgba(1, 238, 255, 0.8);
+    }
+    
+    /* Shiny effect */
+    .shiny-button::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: linear-gradient(135deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+        transform: rotate(45deg);
+        opacity: 0.5;
+        transition: 0.3s ease;
+        pointer-events: none;
+    }
+    
+    /* Shine animation */
+    .shiny-button:hover::before {
+        animation: shine 1s forwards;
+    }
+    
+    /* Keyframes for shine animation */
+    @keyframes shine {
+        0% {
+            transform: rotate(45deg) translateX(-100%);
+            opacity: 0.6;
+        }
+        50% {
+            opacity: 0.8;
+        }
+        100% {
+            transform: rotate(45deg) translateX(100%);
+            opacity: 0;
+        }
+    }
+    .section1{
+        background-color: #323846;
+        margin-top: 30px;
+        width: 100%;
+    }
+    .Aboutme{
+      
+        font-size: 30px;
+        font-family: Verdana, sans-serif;
+        font-weight: bold;
+        color: white;
+        margin-left: 300px;
+    }
+    .me{
+        font-size: 30px;
+        font-family: Verdana, sans-serif;
+        font-weight: bold;
+        color: #01EEFF;
+        margin-left: -40px;
+    }
+    .fields{
+        color: #01EEFF;
+        display: block;
+        margin-left: 150px;
+        margin-top: -20px;
+        font-size: 20px;
+    }
+    .about{
+        display: flex;
+    }
+    .side1{
+        width: 1fr;
+    }
+    .side2{
+        width: 1fr;
+    }
+    .code1{
+        width: 500px;
+        height: 500px;
+        margin-left: 50px;
+    }
+    .main{
+        width: 500px;
+        margin-left: 145px;
+        margin-top: -10px;
+        font-size: larger;
+        align-items: center;
+        font-family: 'Arimo', sans-serif;
+    }
+    .see{
+        margin-right: 30px;
+    }
+
+    .services{
+        font-size: 30px;
+        font-family: Verdana, sans-serif;
+        font-weight: bold;
+        color: white;
+        margin-left: 600px;
+    }
+    .our{
+        display: flex;
+        flex-direction: row;
+
+    }
+    .fe{
+        width: 400px;
+        background-color: #323846;
+        border-radius: 50px;
+        margin-left: 30px;
+    }
+    .tag {
+        filter: brightness(0) saturate(100%) invert(75%) sepia(99%) saturate(1527%) hue-rotate(158deg) brightness(97%) contrast(95%);
+        margin-left: 175px;
+        margin-top: 20px;
+        width: 30px;
+       
+    }
+    .web{
+        margin-left: 100px;
+        margin-top: -1px;
+    }
+    .front{
+        width: 300px;
+        margin-left: 50px;
+        margin-top: -5px;
+       font-size: 17px;
+    }
+    .f{
+        text-align: center;
+        height: 100px;
+        font: Arimo, sans-serif;
+    }
+    .ui{
+        width: 400px;
+        background-color: #323846;
+        border-radius: 50px;
+        margin-left: 70px;
+    }
+    .ux{
+        margin-left: 125px;
+        margin-top: -1px;
+
+    }
+    .digital{
+        width: 400px;
+        background-color: #323846;
+        border-radius: 50px;
+        margin-left: 70px;
+    }
+    .section2{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    .marketing{
+        margin-top: 3px;
+        margin-left: 100px;
+    }
+    .section3{
+        background-color: #323846;
+        margin-top: 30px;
+        background-size: 100%S;
+    }
+    .pro{
+        width: 400px;
+        height: 300px;
+        margin-left: 50px;
+        filter: brightness(0.5);
+    }
+    .short{
+        width: 30px;
+    }
+    .content{
+        
+        position: absolute;
+        background: rgba(0, 0, 0, 0);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        opacity: 0;
+        transition: 0.6s;
+        top: 10px;
+        left: 100px;
+        text-align: center;
+       
+    }
+    .content:hover{
+        opacity: 2;
+    }
+    .wrapper{
+        display: flex;
+        top: 0px;
+    }
+    .img{
+        position: relative;
+    }
+    .content p{
+        margin-top: -10px;
+        font-size: 18px;
+    }
+    .content h1{
+        margin-left: -20px;
+        font-size: 30px;
+    }
+    .project{
+        display: flex;
+        flex-direction: row;
+        flex: 1 1 1fr;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        margin-right: 20px;
+    }
+    .all{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 20px;
+    }
+    .contact-container {
+      max-width: 500px;
+      margin: 50px auto;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      background-color: #151925;
+      color: #fff;
+    }
+
+    
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    label {
+      font-weight: bold;
+      color: #fff;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+
+    button {
+      padding: 10px 15px;
+      background-color: #007BFF;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+    .stylish-btn {
+      padding: 20px 40px;
+      background: linear-gradient(45deg, #01eeff, #00b3b3);
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      border: 2px solid #01eeff;
+      border-radius: 50px;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: all 0.4s ease;
+      outline: none;
+    }
+
+    .stylish-btn::before {
+      content: '';
+      position: absolute;
+      top: -200%;
+      left: -200%;
+      width: 400%;
+      height: 400%;
+      background: rgba(255, 255, 255, 0.3);
+      transition: all 0.5s ease;
+      transform: rotate(45deg);
+    }
+
+    .stylish-btn:hover::before {
+      top: 0;
+      left: 0;
+    }
+
+    .stylish-btn:hover {
+      transform: translateY(-4px) scale(1.05);
+      box-shadow: 0 10px 20px rgba(0, 238, 255, 0.6);
+    }
+
+    .stylish-btn:active {
+      transform: translateY(2px) scale(0.98);
+    }
+
+    .stylish-btn span {
+      position: relative;
+      z-index: 1;
+    }
+  a {
+    text-decoration: none;  /* Remove the underline */
+    color: inherit;         /* Keep the color as the surrounding text */
+  }
+  a:active, a:visited, a:hover {
+    color: inherit;         /* Prevent color change on hover, active, and visited states */
+    text-decoration: none;  /* Prevent underline on hover and click */
+  }
+
+</style>
+      <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+      <script>
+        (function() {
+          emailjs.init("gpkUBfjgyMNklvr9L"); // Public Key
+        })();
+    
+        document.addEventListener("DOMContentLoaded", () => {
+          document.getElementById('contact-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+    
+            const serviceID = 'service_u7odjch'; // Your Service ID
+            const templateID = 'template_vxghnbr'; // Your Template ID
+    
+            emailjs.sendForm(serviceID, templateID, this)
+              .then(() => {
+                alert('Message sent successfully!');
+                document.getElementById('contact-form').reset();
+              })
+              .catch(err => {
+                console.error('Failed to send message:', err);
+                alert('Failed to send message. Please try again later.');
+              });
+          });
+        });
+      </script>
+</head>
+<body>
+    <div class="header">
+        <div class="left">
+            Portfolio.
+        </div>
+        <div class="right">
+            <P>Home</P>
+            <P><a href="#Aboutus"> About us</a></p>
+            <P><a href="#services">Services</a></P>
+            <P><a href="#portfolio">Portfolio</a></P>
+            <P><a href="#contact">Contact us</a></P>
+        </div>
+    </div>
+    <div class="home">
+        <div class="intro">
+    <p class="hello">Hello it's me </p>
+    <p class="name">Eyuel Endale</p>
+    <div class="come">
+        <div class="container">
+            <span class="static-text">And i'm a</span>
+            <div class="scrolling-words">
+                <span>Front-end Developer</span>
+                <span>Ui/Ux Design</span>
+                <span>Digital Marketer</span>
+            </div>
+        </div>
+    </div>
+    <p class="welcome">Welcome to My Portfolio! I’m excited to share my work in digital marketing, UI/UX design, and front-end development. Each project reflects my passion for creating engaging experiences. Feel free to explore, and don’t hesitate to reach out if you’d like to connect!</p>
+    <a href="Eyuel's Cv.pdf"><button class="shiny-button">Download Cv</button></a>
+    
+    </div>
+    <div class="img">
+        <img class="code" src="dark_coding_image_500x500.png">
+    </div>
+    </div>
+    <section id="Aboutus" class="section1">
+        <div class="about">
+            <div class="side">
+                <img class="code1" src="DALL·E 2024-11-15 17.57.48 - A simplified, minimalist dark-themed workspace focused on Figma design. The image shows a sleek desk with a laptop displaying a basic Figma design int.webp">
+            </div>
+            <div class="side2">
+                <div class="Aboutme"><p>About</p><p class="me">Me</p></div>
+                
+                <p class="fields">Frontend developer| UI/UX Designer| Digital marketer</p>
+                <p class="main">Hello! I’m Eyuel Endale, a passionate front-end web developer, UI/UX designer, and digital marketer based in Addis Ababa, Ethiopia. With a strong foundation in front-end development, digital strategy, and design principles, I focus on creating seamless, user-friendly digital experiences. Constantly learning and evolving, I’m excited to bring creative solutions and a keen eye for detail to every project.</p>
+                <div class="see"><a href="Aboutme.html"><button class="shiny-button">See More</button></a></div>  
+
+            </div>
+      
+        </div>
+    </section>
+    <section class="section2" id="services">
+        <div class="services"><p>my</p><p class="me">services</p></div>
+        <div class="our">
+        <div class="fe">
+            <img class="tag" src="code-svgrepo-com.svg">
+            <h2 class="web">Web Developement</h2>
+            <div class="f"><p class="front">I’m a front-end web developer focused on creating responsive, user-friendly websites that are visually engaging and optimized for impactful audience connections.</p>
+        </div>
+        <a href="https://udacity.com/certificate/e/51df3fac-5623-11ef-b5ea-4be65863e278"><div class="ce"><button class="shiny-button">Certificate</button></div></a>
+            </div>
+        <div class="ui">
+            <img class="tag" src="figma.svg">
+            <h2 class="ux">Ui/Ux Design</h2>
+            <div class="f"><p class="front">I’m a UI/UX designer passionate about crafting seamless, engaging digital experiences that prioritize user needs and bring creative ideas to life.</p>
+
+       
+        <div class="ce2"><a href="https://alison.com/shop?clear=1"> <button class="shiny-button">Certificate</button></a></div>
+        </div>
+        </div>
+        
+        <div class="digital">
+            <img class="tag" src="marketing-svgrepo-com.svg">
+            <h2 class="marketing">Digital Marketing</h2>
+            <div class="f"><p class="front">I’m a UI/UX designer passionate about crafting seamless, engaging digital experiences that prioritize user needs and bring creative ideas to life.</p>
+        </div>
+        <div class="ce3"><a href="https://docs.uniathena.com/prod/course/certificate/628_1725034845_certificate.jpg"><button class="shiny-button">Certificate</button></a></div>
+    </div>
+    </section>
+    <section class="section3" id="portfolio">
+        <div class="services"><p>My</p><p class="me">projects</p></div>
+        <div class="all">
+        <div class="project">
+            <div class="wrapper">
+                <div class="img">
+                    <img class="pro" src="pexels-danny-meneses-340146-943096.jpg" alt="">
+                    <div class="content">
+                        <h1>Ui/Ux Design </h1>
+                        <p class="contentp">Created a vibrant, user-friendly gym website in Figma, with bold visuals and intuitive navigation to engage fitness enthusiasts</p>
+                        <div class="see"><a href="https://www.figma.com/proto/Zawg7vVB7Wlny6y6r7RVXD/new?node-id=60-24&starting-point-node-id=60%3A24"><button class="stylish-btn">Project</button></a></div>  
+
+                    </div>
+                </div>
+            </div>
+            <div class="wrapper">
+                <div class="img">
+                    <img class="pro" src="pexels-rahulp9800-1933900.jpg" alt="">
+                    <div class="content">
+                        <h1>Front-end website </h1>
+                        <p class="contentp">Designed a clean, user-friendly front-end gym website with engaging visuals and easy navigation for fitness enthusiasts.</p>
+                        <div class="see"><a href="https://benoni7.github.io/benonisgym/"><button class="stylish-btn">Project</button></a></div> 
+                    </div>
+                </div>
+            </div>
+            <div class="wrapper">
+                <div class="img">
+                    <img class="pro" src="pexels-pixabay-270404.jpg" alt="">
+                    <div class="content">
+                        <h1>WordPress Design</h1>
+                        <p class="contentp">Built a responsive WordPress site with a focus on streamlined user experience and easy content management.</p>
+                        <div class="see"><a href="https://benoniworkout.wordpress.com/"><button class="stylish-btn">Project</button></a></div> 
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="project">
+        <div class="wrapper">
+            <div class="img">
+                <img class="pro" src="pexels-jorge-jesus-137537-614117.jpg" alt="">
+                <div class="content">
+                    <h1>Ui/Ux Design </h1>
+                    <p class="contentp">Crafted a user-friendly portfolio design focused on clear navigation and engaging visuals, making it easy for visitors to explore my work and skills.</p>
+                    <div class="see"><a href="https://www.figma.com/proto/tp0LJ6mVrN6Gkvmc9Kntrd/portfolio?node-id=27-96&node-type=frame&t=z2yfdrlfWIqEELTc-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1"><button class="stylish-btn">Project</button></a></div> 
+                </div>
+            </div>
+        </div>
+        <div class="wrapper">
+            <div class="img">
+                <img class="pro" src="pexels-sora-shimazaki-5935787.jpg" alt="">
+                <div class="content">
+                    <h1>Front-end website</h1>
+                    <p class="contentp">Designed a sleek front-end for an e-commerce website, focusing on responsive layouts and intuitive navigation to create a seamless shopping experience.
+                    </p>
+                    <div class="see"><a href="https://benoni7.github.io/benonis-shop/index.html"><button class="stylish-btn">Project</button></a></div> 
+                </div>
+            </div>
+        </div>
+        <div class="wrapper">
+            <div class="img">
+                <img class="pro" src="pexels-markusspiske-225769.jpg" alt="">
+                <div class="content">
+                    <h1>Ui/Ux Design </h1>
+                    <p class="contentp">Created a vibrant, user-friendly gym website in Figma, with bold visuals and intuitive navigation to engage fitness enthusiasts</p>
+                    <div class="see"><button class="stylish-btn">Project</button></div> 
+                </div>
+            </div>
+        </div>
+
+    </div>
+    </div>
+    </section>
+    <section id="contact">
+        <div class="contact-container">
+    <h1>Contact Me</h1>
+    <form id="contact-form">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" placeholder="Your Name" required>
+      
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="Your Email" required>
+      
+      <label for="subject">Subject</label>
+      <input type="text" id="subject" name="subject" placeholder="Subject" required>
+      
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+      
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+    </section>
+
+    
+</body>
+</html>

@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&display=swap">
+    <style>
+        body{
+            background-color: #151925;
+            color: white;
+            width: fit-content;
+        }
+        .header{
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .left{
+            width: 1fr;
+            margin-left: 40px;
+        }
+        .right{
+            width: 1fr;
+            margin-left: 600px;
+        }
+        p{
+            display: inline-block;
+            margin-right: 50px;
+            font-family: Arial, sans-serif;
+        }
+        .hello{
+            color: white;
+            font-size: 20px;
+            margin: 0;
+            display: block;
+            margin-bottom: -10px;
+        }
+        .intro{
+            margin-left: 200px;
+            margin-top: 40px;
+        }
+        .name{
+            font-size: 30px;
+            font-family: Verdana, sans-serif;
+            font-weight: 800;
+            display: block;
+            margin-bottom: -5px;
+        }
+        .container {
+            font-size: 2em;
+            font-family: Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            height: 150px; /* Full viewport height */
+        }
+
+        /* Base text that stays in place */
+        .static-text {
+            margin-right: 10px;
+            color: #fff; /* Color for the static text */
+        }
+
+        /* Scrolling words container */
+        .scrolling-words {
+            display: inline-block;
+            height: 1.25em; /* Ensures that only one line of text is visible at a time */
+            overflow: hidden;
+            font-weight: bold;
+        }
+
+        /* Position each word in a vertical line with gradient text */
+        .scrolling-words span {
+            display: block;
+            text-align: left;
+            animation: scrollWords 7s ease-in-out infinite;
+            background: #01EEFF;
+            -webkit-background-clip: text; /* Clips background to text */
+            -webkit-text-fill-color: transparent; /* Makes the text color transparent */
+        }
+
+        /* Keyframes for scrolling words */
+        @keyframes scrollWords {
+            0% { transform: translateY(0); }
+            33% { transform: translateY(-100%); }  /* Move to 'Sweat' */
+            66% { transform: translateY(-200%); }  /* Move to 'Achieve' */
+            100% { transform: translateY(0); }     /* Loop back to 'Work' */
+        }
+        .come {
+            margin-top: -40px;
+            font-size: 15px;
+        }
+        .welcome{
+            width: 600px;
+            margin-top: -40px;
+            font-family: Georgia, serif;
+            font-size: 17px;
+            
+        }
+        .code{
+            width: 500px;
+            height: 500px;
+            margin-right: 30px;
+        }
+        a{
+            text-decoration: none;
+        }
+        .home{
+            display: flex;
+            flex-direction: row;
+        }
+        .shiny-button {
+        padding: 15px 30px;
+        font-size: 18px;
+        font-weight: bold;
+        color: #fff;
+        background: linear-gradient(135deg, #01eeff, #0077ff);
+        border: none;
+        border-radius: 8px;
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+        transition: 0.3s ease;
+        box-shadow: 0px 4px 15px rgba(1, 238, 255, 0.5);
+        margin-left: 140px;
+        margin-top: 20px;
+        margin-bottom: 30px;
+        display: block;
+        text-decoration: none;
+        outline: none;
+    }
+    
+    /* Hover effect for a glow */
+    .shiny-button:hover {
+        box-shadow: 0px 4px 25px rgba(1, 238, 255, 0.8);
+    }
+    
+    /* Shiny effect */
+    .shiny-button::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: linear-gradient(135deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+        transform: rotate(45deg);
+        opacity: 0.5;
+        transition: 0.3s ease;
+        pointer-events: none;
+    }
+    
+    /* Shine animation */
+    .shiny-button:hover::before {
+        animation: shine 1s forwards;
+    }
+    
+    /* Keyframes for shine animation */
+    @keyframes shine {
+        0% {
+            transform: rotate(45deg) translateX(-100%);
+            opacity: 0.6;
+        }
+        50% {
+            opacity: 0.8;
+        }
+        100% {
+            transform: rotate(45deg) translateX(100%);
+            opacity: 0;
+        }
+    }
+    .section1{
+        background-color: #323846;
+        margin-top: 30px;
+        width: 100%;
+    }
+    .Aboutme{
+      
+        font-size: 30px;
+        font-family: Verdana, sans-serif;
+        font-weight: bold;
+        color: white;
+        margin-left: 300px;
+    }
+    .me{
+        font-size: 30px;
+        font-family: Verdana, sans-serif;
+        font-weight: bold;
+        color: #01EEFF;
+        margin-left: -40px;
+    }
+    .fields{
+        color: #01EEFF;
+        display: block;
+        margin-left: 150px;
+        margin-top: -20px;
+        font-size: 20px;
+    }
+    .about{
+        display: flex;
+    }
+    .side1{
+        width: 1fr;
+    }
+    .side2{
+        width: 1fr;
+    }
+    .code1{
+        width: 500px;
+        height: 500px;
+        margin-left: 50px;
+    }
+    .main{
+        width: 500px;
+        margin-left: 145px;
+        margin-top: -10px;
+        font-size: larger;
+        align-items: center;
+        font-family: 'Arimo', sans-serif;
+    }
+    .see{
+        margin-right: 30px;
+    }
+
+    .services{
+        font-size: 30px;
+        font-family: Verdana, sans-serif;
+        font-weight: bold;
+        color: white;
+        margin-left: 600px;
+    }
+    .our{
+        display: flex;
+        flex-direction: row;
+
+    }
+    .fe{
+        width: 400px;
+        background-color: #323846;
+        border-radius: 50px;
+        margin-left: 30px;
+    }
+    .tag {
+        filter: brightness(0) saturate(100%) invert(75%) sepia(99%) saturate(1527%) hue-rotate(158deg) brightness(97%) contrast(95%);
+        margin-left: 175px;
+        margin-top: 20px;
+        width: 30px;
+       
+    }
+    .web{
+        margin-left: 100px;
+        margin-top: -1px;
+    }
+    .front{
+        width: 300px;
+        margin-left: 50px;
+        margin-top: -5px;
+       font-size: 17px;
+    }
+    .f{
+        text-align: center;
+        height: 100px;
+        font: Arimo, sans-serif;
+    }
+    .ui{
+        width: 400px;
+        background-color: #323846;
+        border-radius: 50px;
+        margin-left: 70px;
+    }
+    .ux{
+        margin-left: 125px;
+        margin-top: -1px;
+
+    }
+    .digital{
+        width: 400px;
+        background-color: #323846;
+        border-radius: 50px;
+        margin-left: 70px;
+    }
+    .section2{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    .marketing{
+        margin-top: 3px;
+        margin-left: 100px;
+    }
+    .section3{
+        background-color: #323846;
+        margin-top: 30px;
+        background-size: 100%S;
+    }
+    .pro{
+        width: 400px;
+        height: 300px;
+        margin-left: 50px;
+        filter: brightness(0.5);
+    }
+    .short{
+        width: 30px;
+    }
+    .content{
+        
+        position: absolute;
+        background: rgba(0, 0, 0, 0);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        opacity: 0;
+        transition: 0.6s;
+        top: 60%;
+        left: 60%;
+    }
+    .form{
+        font-family: Arial, sans-serif;
+        color: white;
+        font-size: 15px;
+    }
+    .contact-form input,
+    .contact-form textarea {
+        margin-bottom: 10px;
+        padding: 10px;
+        font-size: 16px;
+        border-radius: 8px;
+        border: none;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .contact-form button {
+        padding: 10px 20px;
+        background-color: #01eeff;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <div class="header">
+        <div class="left">
+            <p class="hello">Hi, I'm</p>
+            <p class="name">Eyuel Endale</p>
+            <div class="container">
+                <div class="static-text">I help businesses grow by creating: </div>
+                <div class="scrolling-words">
+                    <span>Work</span>
+                    <span>Sweat</span>
+                    <span>Achieve</span>
+                </div>
+            </div>
+            <p class="come">I’m a passionate digital marketer, UI/UX designer, and front-end developer.</p>
+            <div class="welcome">
+                <p>Creating digital experiences that captivate, engage, and convert.</p>
+            </div>
+        </div>
+
+        <!-- Right section with Image -->
+        <div class="right">
+            <img src="dark_coding_image_500x500.png" class="code" alt="Coding Image">
+        </div>
+    </div>
+
+    <!-- About Me Section -->
+    <div class="section1">
+        <h2 class="Aboutme">About <span class="me">Me</span></h2>
+        <div class="about">
+            <div class="side1">
+                <p class="fields">I am a passionate digital marketer with a focus on building results-driven strategies for businesses. I specialize in front-end development, UI/UX design, and creating digital strategies that help businesses grow.</p>
+                <p class="fields">I strive to create seamless user experiences and impactful marketing campaigns.</p>
+            </div>
+            <div class="side2">
+                <img class="code1" src="code.svg" alt="Coding image">
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="section3">
+        <h2 class="services">Services</h2>
+        <div class="our">
+            <div class="fe">
+                <h3 class="front">Front-End Development</h3>
+            </div>
+            <div class="ui">
+                <h3 class="ux">UI/UX Design</h3>
+            </div>
+            <div class="digital">
+                <h3 class="marketing">Digital Marketing</h3>
+            </div>
+        </div>
+
+        <!-- Download CV Button -->
+        <a href="path/to/your/CV.pdf" download><button class="shiny-button">Download CV</button></a>
+
+        <!-- Contact Form Section -->
+        <div class="contact-form">
+            <form id="contact-form" class="form">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Your Email</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Your Message</label>
+                <textarea id="message" name="message" required></textarea>
+
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

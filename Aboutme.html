@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #151925;
+            color: #fff;
+        }
+        .container{
+            margin-left: 100px;
+        }
+        .header{
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .left{
+            display: flex;
+            width: 1fr;
+            margin-right: 1000px;
+        }
+        a{
+            text-decoration: none;
+            color: #fff;
+        }
+        .stylish-btn {
+      padding: 20px 40px;
+      background: linear-gradient(45deg, #01eeff, #00b3b3);
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      border: 2px solid #01eeff;
+      border-radius: 50px;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: all 0.4s ease;
+      outline: none;
+      margin-left: 500px;
+    }
+
+    .stylish-btn::before {
+      content: '';
+      position: absolute;
+      top: -200%;
+      left: -200%;
+      width: 400%;
+      height: 400%;
+      background: rgba(255, 255, 255, 0.3);
+      transition: all 0.5s ease;
+      transform: rotate(45deg);
+    }
+
+    .stylish-btn:hover::before {
+      top: 0;
+      left: 0;
+    }
+
+    .stylish-btn:hover {
+      transform: translateY(-4px) scale(1.05);
+      box-shadow: 0 10px 20px rgba(0, 238, 255, 0.6);
+    }
+
+    .stylish-btn:active {
+      transform: translateY(2px) scale(0.98);
+    }
+
+    .stylish-btn span {
+      position: relative;
+      z-index: 1;
+    }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="left">
+            <a href="index.htm">Portfolio.</a>
+        </div>
+        </div>
+    <div class="container">
+        <h2>About Me</h2>
+        <p>
+            From my early years at Vision Academy High School in Addis Ababa, I’ve always been driven by the desire to create change. As a teenager with a vision for the future, I’ve focused on learning the skills necessary to shape the digital world. My passion for technology, design, and marketing has fueled my journey toward building a career where I can help businesses grow and evolve in an increasingly digital space.
+        </p>
+        <p>
+            During my time at Vision Academy, I started to develop a keen interest in digital technologies. This led me to pursue certifications and hands-on projects that allowed me to transform my passion into practical skills. I earned certifications in <strong>Programming Fundamentals</strong> from <strong>Udacity</strong>, where I gained the foundation to build interactive and responsive websites. I also pursued <strong>Figma Design</strong> at <strong>Alison</strong>, learning how to craft intuitive and visually engaging user interfaces. Additionally, I completed a <strong>Digital Marketing</strong> certification from <strong>UniAthena</strong>, equipping myself with the knowledge to help brands optimize their online presence and drive customer engagement.
+        </p>
+        <p>
+            I’ve had the opportunity to apply these skills in real-world projects, such as the <strong>BENONI Gym and Fitness Website</strong> and an <strong>E-Commerce Website</strong>, where I focused on both the technical and design aspects, ensuring a seamless user experience. These projects reflect my belief that technology can bring about positive change and create impactful experiences.
+        </p>
+        <p>
+            As a teenager striving for change, I am dedicated to continuous learning and growth. I aim to push the boundaries of what’s possible with every project, and I’m excited to bring innovative ideas to life in the ever-evolving digital landscape.
+        </p>
+        <h3>Certifications:</h3>
+        <ul>
+            <li><strong>Programming Fundamentals</strong> – Udacity</li>
+            <li><strong>Figma Design</strong> – Alison</li>
+            <li><strong>Digital Marketing</strong> – UniAthena</li>
+        </ul>
+        <a href="index.htm"><button class="stylish-btn">portfolio</button></a>
+    </div>
+</body>
+</html>
+    
+
